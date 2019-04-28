@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title>Incremental search</title>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+
+<input type="text" id="search" list="search-list">
+
+<script> 
+
+const list1 = [
+'中村 享介',
+'高津戸 壮',
+'小山田 晃浩',
+'外村 奈津子',
+'德田 和規',
+'山田 順久',
+'山田 敬美',
+'小原 司',
+'坂巻 翔大郎',
+'中島 直博',
+'宇野 陽太',
+'丸山 陽子',
+'大杉 充',
+'森 大典',
+'杉浦 有右嗣',
+'矢倉 眞隆',
+'奥野 賢太郎',
+'藤田 智朗',
+]
+
+const list2 = [
+'Kyosuke Nakamura',
+'Takeshi Takatsudo',
+'Akihiro Oyamada',
+'Natsuko Sotomura',
+'Kazunori Tokuda',
+'Yukihisa Yamada',
+'Takami Yamada',
+'Tsukasa Obara',
+'Shotaro Sakamaki',
+'Naohiro Nakajima',
+'Yota Uno',
+'Yoko Maruyama',
+'Makoto Oosugi',
+'Hironori Mori',
+'Yuji Sugiura',
+'Masataka Yakura',
+'Kentaro Okuno',
+'Tomoaki Fujita',
+]
+
+
+
+const list = list1.concat(list2);
+const search = document.getElementById('search');
+//データリストを作成
+const datalist = document.createElement('datalist');
+
+//datalistのidに親の属性を入れる。
+datalist.setAttribute('id', 'search-list');
+
+list.forEach(function(v){
+    //optionを入れていく
+    let option = document.createElement('option');
+    option.innerText = v;
+    option.value = v;
+    datalist.appendChild(option);
+});
+
+document.body.appendChild(datalist);
+
+
+
+</script>
+
+</body>
+</html>
